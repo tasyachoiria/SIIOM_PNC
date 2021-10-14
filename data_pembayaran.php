@@ -75,8 +75,8 @@
                                     <td><?php echo $d['tanggal_bayar']; ?></td>
                                     <td>Rp. <?php echo number_format($d['nominal'], 0, ',', '.') ?></td>
                                     <td><?php if ($d['status'] == null) { ?>
-                                            <a href="" class="btn btn-success"><i class="fas fa-check-circle"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fas fa-times-circle"></i></a>
+                                            <a href="verify.php?id_p=<?php echo $d['id_pembayaran']; ?>" class="btn btn-success"><i class="fas fa-check-circle"></i></a>
+                                            <a href="verif.php?id_p=<?php echo $d['id_pembayaran']; ?>" class="btn btn-danger"><i class="fas fa-times-circle"></i></a>
                                         <?php } else {
                                             echo $d['status'];
                                         } ?>

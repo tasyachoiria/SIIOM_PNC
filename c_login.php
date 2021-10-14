@@ -15,7 +15,7 @@ if ($level == 1) {
 	$cek = mysqli_num_rows($result);
 
 	$bio = mysqli_fetch_array($result);
-	$id_ceo = $bio["id_ceo"];
+	$nip = $bio["nip"];
 	$nama = $bio["nama"];
 	if ($cek > 0) {
 		$data = mysqli_fetch_assoc($result);
@@ -23,7 +23,7 @@ if ($level == 1) {
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
 		$_SESSION['nama'] = $nama;
-		$_SESSION['level'] = $id_ceo;
+		$_SESSION['id'] = $nip;
 		$_SESSION['status'] = "sudah_login";
 		header("location:data_mahasiswa.php");
 	} else {
