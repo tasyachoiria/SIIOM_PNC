@@ -83,7 +83,7 @@
                                     </td>
                                     <td>
                                         <a href="" type="button" class="fas fa-edit" data-toggle="modal" data-target="#myModal<?php echo $d['nim']; ?>"></a>
-                                        <a href="hapus.php?nim=<?php echo $d['nim']; ?>" class="fas fa-trash"></a>
+                                        <a href="hapusP.php?nim=<?php echo $d['nim']; ?>" class="fas fa-trash"></a>
                                         <a href="" type="button" class="fas fa-list" data-toggle="modal" data-target="#detailModal<?php echo $d['nim']; ?>"></a>
                                     </td>
                                 </tr>
