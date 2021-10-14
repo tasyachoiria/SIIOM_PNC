@@ -167,8 +167,36 @@
                                             <div class="modal-body">
                                                 <form action="edit_m.php" method="post">
                                                     <div class="form-group form-group-default">
+                                                        <label>Nip</label>
+                                                        <input type="text" class="form-control" placeholder="nip" name="nim" value="<?php echo $d['nip'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Username</label>
+                                                        <input type="text" class="form-control" placeholder="username" name="username" value="<?php echo $d['username'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
                                                         <label>Password</label>
-                                                        <input type="text" class="form-control" placeholder="Password" name="prodi" value="<?php echo $d['password'] ?>" required>
+                                                        <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $d['password'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Nama</label>
+                                                        <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Alamat</label>
+                                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>No HP</label>
+                                                        <input type="text" class="form-control" placeholder="No HP" name="nohp" value="<?php echo $d['no_hp'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Jabatan</label>
+                                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $d['jabatan'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Level</label>
+                                                        <input type="text" class="form-control" placeholder="Level" name="level" value="<?php echo $d['level'] ?>" required>
                                                     </div>
                                                     <div class="row">
                                                         <!-- <div class="col-md-4">

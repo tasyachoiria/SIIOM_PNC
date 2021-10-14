@@ -170,10 +170,42 @@
                                         </div>
                                         <div class="modal-body">
                                             <form action="edit_m.php" method="post">
-                                                <div class="form-group form-group-default">
-                                                    <label>Password</label>
-                                                    <input type="text" class="form-control" placeholder="Password" name="prodi" value="<?php echo $d['password'] ?>" required>
-                                                </div>
+                                            <div class="form-group form-group-default">
+                                                        <label>Nim</label>
+                                                        <input type="text" class="form-control" placeholder="nim" name="nim" value="<?php echo $d['nim'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Username</label>
+                                                        <input type="text" class="form-control" placeholder="username" name="username" value="<?php echo $d['username'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Password</label>
+                                                        <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $d['password'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Nama</label>
+                                                        <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Jenis Kelamin</label>
+                                                        <input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenis kelamin" value="<?php echo $d['jenis_kelamin'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Alamat</label>
+                                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>No HP</label>
+                                                        <input type="text" class="form-control" placeholder="No HP" name="nohp" value="<?php echo $d['no_hp'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Jurusan</label>
+                                                        <input type="text" class="form-control" placeholder="jurusan" name="jurusan" value="<?php echo $d['jurusan'] ?>" required>
+                                                    </div>
+                                                    <div class="form-group form-group-default">
+                                                        <label>Prodi</label>
+                                                        <input type="text" class="form-control" placeholder="Prodi" name="prodi" value="<?php echo $d['prodi'] ?>" required>
+                                                    </div>
                                                 <div class="row">
                                                     <!-- <div class="col-md-4">
                                                             <div class="form-group form-group-default">
