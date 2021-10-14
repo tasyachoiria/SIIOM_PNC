@@ -115,8 +115,11 @@
                                                     <input type="text" class="form-control" placeholder="Masukan Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
                                                 </div>
                                                 <div class="form-group form-group-default">
-                                                    <label>Jenis Kelamin</label>
-                                                    <input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenis kelamin" value="<?php echo $d['jenis_kelamin'] ?>" required>
+                                                        <label>Jenis Kelamin</label>
+                                                            <select style="width: 232px;" name="jenis_kelamin" class="form-control">
+                                                                <option>Laki-laki</option>
+                                                                <option>Perempuan</option>
+                                                            </select>
                                                 </div>
                                                 <div class="form-group form-group-default">
                                                     <label>Alamat</label>
@@ -127,13 +130,26 @@
                                                     <input type="text" class="form-control" placeholder="No Hp." name="nohp" value="<?php echo $d['no_hp'] ?>" required>
                                                 </div>
                                                 <div class="form-group form-group-default">
-                                                    <label>Jurusan</label>
-                                                    <input type="text" class="form-control" placeholder="Jurusan" name="jurusan" value="<?php echo $d['jurusan'] ?>" required>
+                                                        <label>Jurusan</label>
+                                                            <select style="width: 232px;" name="jurusan" class="form-control">
+                                                                <option>Jurusan Teknik Elektronika</option>
+                                                                <option>Jurusan Teknik Informatika</option>
+                                                                <option>Jurusan Teknik Mesin</option>
+                                                                <option>Program Studi Teknik Pengendalian Pencemaran Lingkungan</option>
+                                                                <option>Program Studi Teknik Pengembangan Produk Agroindustri</option>
+                                                            </select>
                                                 </div>
                                                 <div class="form-group form-group-default">
-                                                    <label>Prodi</label>
-                                                    <input type="text" class="form-control" placeholder="Prodi" name="prodi" value="<?php echo $d['prodi'] ?>" required>
-                                                </div>
+                                                        <label>Prodi</label>
+                                                            <select style="width: 232px;" name="prodi" class="form-control">
+                                                                <option>D3 - Teknik Elektronika</option>
+                                                                <option>D3 - Teknik Listrik</option>
+                                                                <option>D3 - Teknik Informatika</option>
+                                                                <option>D3 - Teknik Mesin</option>
+                                                                <option>D4 - Teknik Pengendalian Pencemaran Lingkungan</option>
+                                                                <option>D4 - Teknik Pengembangan Produk Agroindustri</option>
+                                                            </select>
+                                                    </div>
                                                 <div class="row">
                                                     <!-- <div class="col-md-4">
                                                             <div class="form-group form-group-default">
@@ -200,7 +216,7 @@
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Jurusan</label>
-                                                        <input type="text" class="form-control" placeholder="jurusan" name="jurusan" value="<?php echo $d['jurusan'] ?>" required>
+                                                        <input type="text" class="form-control" placeholder="Jurusan" name="jurusan" value="<?php echo $d['jurusan'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Prodi</label>
@@ -258,12 +274,19 @@
                                     <input type="text" class="form-control" placeholder="Username" name="username" required>
                                 </div>
                                 <div class="form-group form-group-default">
+                                    <label>Password</label>
+                                    <input type="text" class="form-control" placeholder="Password" name="password" required>
+                                </div>
+                                <div class="form-group form-group-default">
                                     <label>Nama</label>
                                     <input type="text" class="form-control" placeholder="Masukan Nama" name="nama" required>
                                 </div>
                                 <div class="form-group form-group-default">
                                     <label>Jenis Kelamin</label>
-                                    <input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenis_kelamin" required>
+                                    <select style="width: 232px;" name="jenis_kelamin" class="form-control">
+                                        <option>Laki-laki</option>
+                                        <option>Perempuan</option>
+                                    </select>
                                 </div>
                                 <div class="form-group form-group-default">
                                     <label>Alamat</label>
@@ -275,13 +298,25 @@
                                 </div>
                                 <div class="form-group form-group-default">
                                     <label>Jurusan</label>
-                                    <input type="text" class="form-control" placeholder="Jurusan" name="jurusan" required>
+                                    <select style="width: 232px;" name="jurusan" class="form-control">
+                                        <option>Jurusan Teknik Elektronika</option>
+                                        <option>Jurusan Teknik Informatika</option>
+                                        <option>Jurusan Teknik Mesin</option>
+                                        <option>Program Studi Teknik Pengendalian Pencemaran Lingkungan</option>
+                                        <option>Program Studi Teknik Pengembangan Produk Agroindustri</option>
+                                    </select>
                                 </div>
                                 <div class="form-group form-group-default">
                                     <label>Prodi</label>
-                                    <input type="text" class="form-control" placeholder="Prodi" name="prodi" required>
+                                    <select style="width: 232px;" name="prodi" class="form-control">
+                                        <option>D3 - Teknik Elektronika</option>
+                                        <option>D3 - Teknik Listrik</option>
+                                        <option>D3 - Teknik Informatika</option>
+                                        <option>D3 - Teknik Mesin</option>
+                                        <option>D4 - Teknik Pengendalian Pencemaran Lingkungan</option>
+                                        <option>D4 - Teknik Pengembangan Produk Agroindustri</option>
+                                    </select>
                                 </div>
-
                                 <div class="row">
                                     <!-- <div class="col-md-4">
                                                             <div class="form-group form-group-default">
