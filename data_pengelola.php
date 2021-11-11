@@ -1,7 +1,7 @@
 <?php include 't_head.html'; ?>
 
 <title>
-    Data Karyawan
+    Data Pengelola
 </title>
 
 
@@ -18,14 +18,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Karyawan</h1>
+                        <h1>Data Pengelola</h1>
                         <br>
-                        <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMa">Tambah Data Karyawan</a>
+                        <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMa">Tambah Data Pengelola</a>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Data Karyawan</li>
+                            <li class="breadcrumb-item active">Data Pengelola</li>
                         </ol>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Karyawan</h3>
+                    <h3 class="card-title">Data Pengelola</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -65,7 +65,7 @@
                         <?php
                         include 'koneksi.php';
                         $no = 1;
-                        $data = mysqli_query($koneksi, "select * from tb_karyawan");
+                        $data = mysqli_query($koneksi, "select * from tb_pengelola");
                         while ($d = mysqli_fetch_array($data)) {
                         ?>
                             <tbody>
@@ -82,7 +82,7 @@
 
                                     <td>
                                         <a href="" type="button" class="fas fa-edit" data-toggle="modal" data-target="#myModal<?php echo $d['nip']; ?>"></a>
-                                        <a href="hapusK.php?nip=<?php echo $d['nip']; ?>" class="fas fa-trash"></a>
+                                        <a href="hapusPengelola.php?nip=<?php echo $d['nip']; ?>" class="fas fa-trash"></a>
                                         <a href="" type="button" class="fas fa-list" data-toggle="modal" data-target="#myDetail<?php echo $d['nip']; ?>"></a>
                                     </td>
                                 </tr>
@@ -98,52 +98,36 @@
                                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="edit_karyawan.php" method="post">
+                                                <form action="edit_pengelola.php" method="post">
                                                     <div class="form-group form-group-default">
                                                         <label>Nip</label>
                                                         <input type="hidden" name="nip" value="<?php echo $d['nip'] ?>">
-                                                        <input type="text" class="form-control" placeholder="Nip" name="nip" value="<?php echo $d['nip'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Nip" name="nip" value="<?php echo $d['nip'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Username</label>
                                                         <input type="hidden" name="nip" value="<?php echo $d['nip'] ?>">
-                                                        <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $d['username'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Username" name="username" value="<?php echo $d['username'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Nama</label>
-                                                        <input type="text" class="form-control" placeholder="Masukan Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Masukan Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Alamat</label>
-                                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>No HP</label>
-                                                        <input type="text" class="form-control" placeholder="No Hp." name="nohp" value="<?php echo $d['no_hp'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="No Hp." name="nohp" value="<?php echo $d['no_hp'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Jabatan</label>
-                                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $d['jabatan'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Jabatan" name="jabatan" value="<?php echo $d['jabatan'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Level</label>
-                                                        <input type="text" class="form-control" placeholder="Level" name="level" value="<?php echo $d['level'] ?>" required>
-                                                    </div>
-                                                    <div class="row">
-                                                        <!-- <div class="col-md-4">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Level</label>
-                                                                <select class="form-control" name="level" required>
-                                                                    <?php foreach ($level as $lvl) { ?>
-                                                                        <?php if ($akun['level_id'] == $lvl['id_level']) { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>" selected><?= $lvl['level'] ?></option>
-                                                                        <?php } else { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>"><?= $lvl['level'] ?></option>
-                                                                        <?php } ?>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div> -->
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Level" name="level" value="<?php echo $d['level'] ?>" required>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -156,63 +140,48 @@
                                 </div>
 
 
-                                <!-- Modal detail -->
-                                <div class="modal fade" id="myDetail<?php echo $d['nip'] ?>" tabindex="-1" aria-labelledby="editAkun<?= $akun['id_user'] ?>Label" aria-hidden="true">
+                                    <!-- Modal detail -->
+                                    <div class="modal fade" id="myDetail<?php echo $d['nip'] ?>" tabindex="-1" aria-labelledby="editAkun<?= $akun['id_user'] ?>Label" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="editAkun<?php echo $d['nip'] ?>Label">Edit Akun</h5>
+                                                <h5 class="modal-title" id="editAkun<?php echo $d['nip'] ?>Label">Detail Akun</h5>
                                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="edit_m.php" method="post">
+                                                <h3 class="profile-username text-center"><?php echo $d['nama'] ?></h3>
+                                                <form action="edit_mahasiswa.php" method="post">
                                                     <div class="form-group form-group-default">
                                                         <label>Nip</label>
-                                                        <input type="text" class="form-control" placeholder="nip" name="nim" value="<?php echo $d['nip'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="nip" name="nim" value="<?php echo $d['nip'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Username</label>
-                                                        <input type="text" class="form-control" placeholder="username" name="username" value="<?php echo $d['username'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="username" name="username" value="<?php echo $d['username'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Password</label>
-                                                        <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $d['password'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Password" name="password" value="<?php echo $d['password'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Nama</label>
-                                                        <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Nama" name="nama" value="<?php echo $d['nama'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Alamat</label>
-                                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Alamat" name="alamat" value="<?php echo $d['alamat'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>No HP</label>
-                                                        <input type="text" class="form-control" placeholder="No HP" name="nohp" value="<?php echo $d['no_hp'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="No HP" name="nohp" value="<?php echo $d['no_hp'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Jabatan</label>
-                                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $d['jabatan'] ?>" required>
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Jabatan" name="jabatan" value="<?php echo $d['jabatan'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
                                                         <label>Level</label>
-                                                        <input type="text" class="form-control" placeholder="Level" name="level" value="<?php echo $d['level'] ?>" required>
-                                                    </div>
-                                                    <div class="row">
-                                                        <!-- <div class="col-md-4">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Level</label>
-                                                                <select class="form-control" name="level" required>
-                                                                    <?php foreach ($level as $lvl) { ?>
-                                                                        <?php if ($akun['level_id'] == $lvl['id_level']) { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>" selected><?= $lvl['level'] ?></option>
-                                                                        <?php } else { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>"><?= $lvl['level'] ?></option>
-                                                                        <?php } ?>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div> -->
+                                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Level" name="level" value="<?php echo $d['level'] ?>" required>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -240,51 +209,34 @@
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="tambah_karyawan.php" method="post">
+                                <form action="tambah_pengelola.php" method="post">
                                     <div class="form-group form-group-default">
                                         <label>NIP</label>
-                                        <input type="number" class="form-control" placeholder="Nip" name="nip" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Nip" name="nip" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" name="username" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Username" name="username" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>Nama</label>
-                                        <input type="text" class="form-control" placeholder="Masukan Nama" name="nama" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Masukan Nama" name="nama" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>Alamat</label>
-                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Alamat" name="alamat" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>No Hp</label>
-                                        <input type="text" class="form-control" placeholder="No Hp." name="no_hp" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="No Hp." name="no_hp" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>Jabatan</label>
-                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" required>
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Jabatan" name="jabatan" required>
                                     </div>
                                     <div class="form-group form-group-default">
                                         <label>Level</label>
-                                        <input type="text" class="form-control" placeholder="Level" name="level" required>
-                                    </div>
-
-                                    <div class="row">
-                                        <!-- <div class="col-md-4">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Level</label>
-                                                                <select class="form-control" name="level" required>
-                                                                    <?php foreach ($level as $lvl) { ?>
-                                                                        <?php if ($akun['level_id'] == $lvl['id_level']) { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>" selected><?= $lvl['level'] ?></option>
-                                                                        <?php } else { ?>
-                                                                            <option value="<?= $lvl['id_level'] ?>"><?= $lvl['level'] ?></option>
-                                                                        <?php } ?>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div> -->
+                                        <input style="width: 350px;" type="text" class="float-right" placeholder="Level" name="level" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -296,11 +248,6 @@
                     </div>
                 </div>
 
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    Footer
-                </div>
-                <!-- /.card-footer-->
             </div>
             <!-- /.card -->
 

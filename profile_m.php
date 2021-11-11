@@ -5,7 +5,7 @@
 </title>
 <div class="wrapper">
     <?php include 't_topbarku.php'; ?>
-    <?php include 't_sidebarku.html'; ?>
+    <?php include 't_sidebarkuM.html'; ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -34,7 +34,7 @@
                         include 'koneksi.php';
                         $no = $_SESSION['id'];
 
-                        $data = mysqli_query($koneksi, "select * from tb_pengelola where nip = $no");
+                        $data = mysqli_query($koneksi, "select * from tb_mahasiswa where nim = $no");
                         while ($d = mysqli_fetch_array($data)) {
                         ?>
                             <!-- Profile Image -->
@@ -50,28 +50,31 @@
 
                                     <ul class="list-group list-group-unbordered mb-3">
                                         <li class="list-group-item">
-                                            <b>NIP</b> <a class="float-right"><?php echo $d['nip'] ?></a>
+                                            <b>NIM</b> <a class="float-right"><?php echo $d['nim'] ?></a>
                                         </li>
                                         <li class="list-group-item">
                                             <b>NO HP</b> <a class="float-right"><?php echo $d['no_hp'] ?></a>
                                         </li>
                                         <li class="list-group-item">
-                                            <b>JABATAN</b> <a class="float-right"><?php echo $d['jabatan'] ?></a>
+                                            <b>JURUSAN</b> <a class="float-right"><?php echo $d['jurusan'] ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>PRODI</b> <a class="float-right"><?php echo $d['prodi'] ?></a>
                                         </li>
 
                                     </ul>
 
 
-                                    <a href="" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal<?php echo $d['nip']; ?>"><b>Edit Profile</b></a>
+                                    <a href="" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal<?php echo $d['nim']; ?>"><b>Edit Profile</b></a>
                                 </div>
 
 
                                 <!-- Modal edit -->
-                                <div class="modal fade" id="myModal<?php echo $d['nip'] ?>" tabindex="-1" aria-labelledby="editAkun<?= $akun['id_user'] ?>Label" aria-hidden="true">
+                                <div class="modal fade" id="myModal<?php echo $d['nim'] ?>" tabindex="-1" aria-labelledby="editAkun<?= $akun['id_user'] ?>Label" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="editAkun<?php echo $d['nip'] ?>Label">Edit Akun</h5>
+                                                <h5 class="modal-title" id="editAkun<?php echo $d['nim'] ?>Label">Edit Akun</h5>
                                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -79,7 +82,7 @@
 
                                                     <div class="form-group form-group-default">
                                                         <label>Username</label>
-                                                        <input type="hidden" name="nip" value="<?php echo $d['nip'] ?>">
+                                                        <input type="hidden" name="nip" value="<?php echo $d['nim'] ?>">
                                                         <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $d['username'] ?>" required>
                                                     </div>
                                                     <div class="form-group form-group-default">
@@ -130,5 +133,4 @@
     </div>
 </div>
 </body>
-
 <?php include 't_foot.html'; ?>

@@ -7,7 +7,7 @@ $id_p = $_GET['id_p'];
 
 
 // menghapus data dari database
-mysqli_query($koneksi, "update tb_pembayaran set status='sukses' where id_pembayaran='$id_p'");
+mysqli_query($koneksi, "update tb_pembayaran set status='Ok' where id_pembayaran='$id_p'");
 
 // mengalihkan halaman kembali ke index.php
 header("location:data_pembayaran.php");

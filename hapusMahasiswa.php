@@ -3,11 +3,11 @@
 include 'koneksi.php';
 
 // menangkap data id yang di kirim dari url
-$nip = $_GET['nip'];
+$nim = $_GET['nim'];
 
 
 // menghapus data dari database
-mysqli_query($koneksi, "delete from tb_karyawan where nip='$nip'");
+mysqli_query($koneksi, "delete from tb_mahasiswa where nim='$nim'");
 
 // mengalihkan halaman kembali ke index.php
-header("location:data_karyawan.php");
+header("location:data_mahasiswa.php");

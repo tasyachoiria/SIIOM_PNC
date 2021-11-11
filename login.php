@@ -76,9 +76,9 @@
                 </div>
                 <div class="input-group mb-3">
                     <select class="form-control form-select" placeholder="Level" name="level">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="1">Pengelola</option>
+                        <option value="2">mbuh</option>
+                        <option value="3">Mahasiswa</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text">

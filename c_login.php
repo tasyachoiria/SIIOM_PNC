@@ -11,7 +11,7 @@ $password = $_POST['password'];
 $level = $_POST['level'];
 
 if ($level == 1) {
-	$result = mysqli_query($koneksi, "SELECT * FROM tb_karyawan where username='$username' and password='$password'");
+	$result = mysqli_query($koneksi, "SELECT * FROM tb_pengelola where username='$username' and password='$password'");
 	$cek = mysqli_num_rows($result);
 
 	$bio = mysqli_fetch_array($result);
@@ -25,7 +25,7 @@ if ($level == 1) {
 		$_SESSION['nama'] = $nama;
 		$_SESSION['id'] = $nip;
 		$_SESSION['status'] = "sudah_login";
-		header("location:data_mahasiswa.php");
+		header("location:profile.php");
 	} else {
 		header("location:login.php?pesan=Login gagal, data tidak ditemukan.");
 	}
@@ -47,15 +47,20 @@ if ($level == 1) {
 } elseif ($level == 3) {
 	$result = mysqli_query($koneksi, "SELECT * FROM tb_mahasiswa where username='$username' and password='$password'");
 	$cek = mysqli_num_rows($result);
+	$bio = mysqli_fetch_array($result);
+	$nim = $bio["nim"];
+	$nama = $bio["nama"];
 
 	if ($cek > 0) {
 		$data = mysqli_fetch_assoc($result);
 		//menyimpan session user, nama, status dan id 
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $pass;
+		$_SESSION['id'] = $nim;
+		$_SESSION['nama'] = $nama;
 		$_SESSION['level'] = $level;
 		$_SESSION['status'] = "sudah_login";
-		header("location:mahasiswa_page.php");
+		header("location:profile_m.php");
 	} else {
 		header("location:login.php?pesan=Login gagal, data tidak ditemukan.");
 	}
